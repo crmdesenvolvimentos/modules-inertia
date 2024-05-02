@@ -1,6 +1,6 @@
 <?php
 
-namespace Dongrim\ModulesInertia\Exceptions;
+namespace Crmdesenvolvimentos\ModulesInertia\Exceptions;
 
 class ModuleNameNotFound extends \Exception
 {

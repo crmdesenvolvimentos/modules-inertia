@@ -1,5 +1,5 @@
 {
-    "name": "toanld/modules-inertia",
+    "name": "crmdesenvolvimentos/modules-inertia",
     "description": "Relationship Vue/InertiaJs with modular structure Laravel-Modules",
     "keywords": [
         "nwidart",
@@ -7,46 +7,38 @@
         "Vue",
         "InertiaJS",
         "laravel",
+        "vite",
         "php"
     ],
     "license": "MIT",
     "authors": [
         {
-            "name": "Yaroslav Fedan",
-            "email": "yaroslav.fd@gmail.com"
+            "name": "Celio Martins",
+            "email": "crmdesenvolvimentos@gmail.com"
         }
     ],
     "require": {
         "php": ">=7.4.0",
-        "laravel/framework": "~6.0||^7.0||^8.0||^9.0||^10.0",
-        "nwidart/laravel-modules": "^9.0.4||^10.0",
+        "laravel/framework": "^8.0||^9.0||^10.0||^11.0",
+        "nwidart/laravel-modules": "^9.0.4||^10.0||^11.0",
         "inertiajs/inertia-laravel": "*"
     },
     "autoload": {
         "psr-4": {
-            "Dongrim\\ModulesInertia\\": "src/"
+            "Crmdesenvolvimentos\\ModulesInertia\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Dongrim\\ModulesInertia\\Tests\\": "tests/"
+            "Crmdesenvolvimentos\\ModulesInertia\\Tests\\": "tests/"
         }
-    },
-    "require-dev": {
-        "orchestra/testbench": "^6.24",
-        "phpunit/phpunit": "9.5.*",
-        "laravel/pint": "^0.2.3",
-        "laravel/legacy-factories" : "1.x"
     },
     "extra" :{
         "laravel": {
             "providers": [
-                "Dongrim\\ModulesInertia\\ModulesInertiaServiceProvider"
+                "Crmdesenvolvimentos\\ModulesInertia\\ModulesInertiaServiceProvider"
             ]
         }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit"
     },
     "prefer-stable": true
 }

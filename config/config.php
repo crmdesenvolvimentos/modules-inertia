@@ -33,23 +33,12 @@ return [
             'Pages/Index' => 'Resources/Pages/Index.vue',
             'scaffold/config' => 'Config/config.php',
             'composer' => 'composer.json',
-            // 'routes/api' => 'Routes/api.php',
-            // 'views/index' => 'Resources/views/index.blade.php',
-            // 'views/master' => 'Resources/views/layouts/master.blade.php',
-            // 'assets/js/app' => 'Resources/assets/js/app.js',
-            // 'assets/sass/app' => 'Resources/assets/sass/app.scss',
-            // 'webpack' => 'webpack.mix.js',
-            // 'package' => 'package.json',
         ],
         'replacements' => [
             'routes/web' => ['LOWER_NAME', 'STUDLY_NAME'],
             'json' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE', 'PROVIDER_NAMESPACE'],
             'Pages/Index' => ['LOWER_NAME', 'STUDLY_NAME'],
             'scaffold/config' => ['STUDLY_NAME'],
-            // 'routes/api' => ['LOWER_NAME'],
-            // 'webpack' => ['LOWER_NAME'],
-            // 'views/index' => ['LOWER_NAME'],
-            // 'views/master' => ['LOWER_NAME', 'STUDLY_NAME'],
             'composer' => [
                 'LOWER_NAME',
                 'STUDLY_NAME',
@@ -60,7 +49,7 @@ return [
                 'PROVIDER_NAMESPACE',
             ],
         ],
-        'gitkeep' => true,
+        'gitkeep' => false,
     ],
     'paths' => [
         /*
@@ -114,11 +103,11 @@ return [
         */
         'generator' => [
             'config' => ['path' => 'Config', 'generate' => true],
-            'command' => ['path' => 'Console', 'generate' => true],
+            'command' => ['path' => 'Console', 'generate' => false],
             'migration' => ['path' => 'Database/Migrations', 'generate' => true],
-            'seeder' => ['path' => 'Database/Seeders', 'generate' => true],
-            'factory' => ['path' => 'Database/factories', 'generate' => true],
-            'model' => ['path' => 'Entities', 'generate' => true],
+            'seeder' => ['path' => 'Database/Seeders', 'generate' => false],
+            'factory' => ['path' => 'Database/factories', 'generate' => false],
+            'model' => ['path' => 'Models', 'generate' => true],
             'routes' => ['path' => 'Routes', 'generate' => true],
             'controller' => ['path' => 'Http/Controllers', 'generate' => true],
             'filter' => ['path' => 'Http/Middleware', 'generate' => true],
@@ -129,7 +118,7 @@ return [
             'lang' => ['path' => 'Resources/lang', 'generate' => false],
             'views' => ['path' => 'Resources/views', 'generate' => false],
             'test' => ['path' => 'Tests/Unit', 'generate' => false],
-            'test-feature' => ['path' => 'Tests/Feature', 'generate' => true],
+            'test-feature' => ['path' => 'Tests/Feature', 'generate' => false],
             'repository' => ['path' => 'Repositories', 'generate' => false],
             'event' => ['path' => 'Events', 'generate' => false],
             'listener' => ['path' => 'Listeners', 'generate' => false],
@@ -226,10 +215,10 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'YaroslavFedan',
+        'vendor' => 'Crmdesenvolvimentos',
         'author' => [
-            'name' => 'Yaroslav Fedan',
-            'email' => 'yaroslav.fd@gmail.com',
+            'name' => 'Celio Martins',
+            'email' => 'crmdesenvolvimentos@gmail.com',
         ],
         'composer-output' => false,
     ],

@@ -1,14 +1,14 @@
 <?php
 
-namespace Dongrim\ModulesInertia;
+namespace Crmdesenvolvimentos\ModulesInertia;
 
 use Illuminate\Support\Str;
 use Nwidart\Modules\Facades\Module;
 use Illuminate\Support\Facades\File;
-use Dongrim\ModulesInertia\Exceptions\ModuleNotExist;
-use Dongrim\ModulesInertia\Exceptions\ModuleNameNotFound;
-use Dongrim\ModulesInertia\Exceptions\FilePathIsIncorrect;
-use Dongrim\ModulesInertia\Exceptions\FilePathNotSpecified;
+use Crmdesenvolvimentos\ModulesInertia\Exceptions\ModuleNotExist;
+use Crmdesenvolvimentos\ModulesInertia\Exceptions\ModuleNameNotFound;
+use Crmdesenvolvimentos\ModulesInertia\Exceptions\FilePathIsIncorrect;
+use Crmdesenvolvimentos\ModulesInertia\Exceptions\FilePathNotSpecified;
 
 class ModulesInertiaSource
 {

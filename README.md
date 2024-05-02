@@ -4,19 +4,18 @@
 
 The package is designed to be used by Vue/InertiaJs in conjunction with [Laravel-Modules](https://github.com/nWidart/laravel-modules)
 
-
 ## Laravel compatibility
 
- Laravel      | modules-inertia
-:-------------|:----------
- 6.0-10.x     | 0.0.x
+| Laravel  | modules-inertia |
+| :------- | :-------------- |
+| 6.0-11.x | 0.0.x           |
 
 ## Installation
 
 **Install the package via composer.**
 
 ```bash
-composer require toanld/modules-inertia
+composer require crmdesenvolvimentos/modules-inertia
 ```
 
 ## Config Files
@@ -24,12 +23,14 @@ composer require toanld/modules-inertia
 **In order to edit the default configuration you may execute:**
 
 ```
-php artisan vendor:publish --provider="Dongrim\ModulesInertia\ModulesInertiaServiceProvider"
+php artisan vendor:publish --provider="Crmdesenvolvimentos\ModulesInertia\ModulesInertiaServiceProvider"
 ```
 
 ## Autoloading
+
 **By default, the module classes are not loaded automatically. You can autoload your modules using psr-4.**
 **For example:**
+
 ```json
 {
   "autoload": {
@@ -42,10 +43,8 @@ php artisan vendor:publish --provider="Dongrim\ModulesInertia\ModulesInertiaServ
 
 }
 ```
+
 **Tip: don't forget to run `composer dump-autoload` afterwards.**
-
-
-
 
 ## Routing
 
@@ -59,6 +58,7 @@ php artisan vendor:publish --provider="Dongrim\ModulesInertia\ModulesInertiaServ
 ],
 
 ```
+
 ## Usage
 
 **By default, Vue module files are created in the module directory Resources/Pages**
@@ -79,7 +79,7 @@ php artisan vendor:publish --provider="Dongrim\ModulesInertia\ModulesInertiaServ
 
 - `module_name` - real name of the current module
 - `file_name` - real name of the file (no extension .vue)
-- `directory_name` -  if you have nested display folder structure ( you can specify the file path separating by a dot )
+- `directory_name` - if you have nested display folder structure ( you can specify the file path separating by a dot )
 
 **For example:**
 
@@ -94,108 +94,86 @@ php artisan vendor:publish --provider="Dongrim\ModulesInertia\ModulesInertiaServ
     }
 ```
 
-### If you use Vue version 2 
-
+### If you use Vue version 2
 
 ```javascript
 import Vue from "vue";
 import { createInertiaApp, Link } from "@inertiajs/inertia-vue";
 
 createInertiaApp({
-    resolve: (name) => {
-        let page = null;
+  resolve: (name) => {
+    let page = null;
 
-        let isModule = name.split("::");
-        if (isModule.length > 1) {
-            let moduleName = isModule[0];
-            let pathToFile = isModule[1];
-            // @modules is an alias of the module folder or just specify the path 
-            // from the root directory to the folder modules             
-            // for example ../../modules
-            page = require(`@modules/${moduleName}/${pathToFile}.vue`);
-        } else {
-            page = require(`./Pages/${name}`);
-        }
+    let isModule = name.split("::");
+    if (isModule.length > 1) {
+      let moduleName = isModule[0];
+      let pathToFile = isModule[1];
+      // @modules is an alias of the module folder or just specify the path
+      // from the root directory to the folder modules
+      // for example ../../modules
+      page = require(`@modules/${moduleName}/${pathToFile}.vue`);
+    } else {
+      page = require(`./Pages/${name}`);
+    }
 
-        return page.default;
-    },
-    setup({ el, App, props, plugin }) {
-        Vue.use(plugin);
-       
-        new Vue({
-            render: (h) => h(App, props),
-        }).$mount(el);
-    },
+    return page.default;
+  },
+  setup({ el, App, props, plugin }) {
+    Vue.use(plugin);
+
+    new Vue({
+      render: (h) => h(App, props),
+    }).$mount(el);
+  },
 });
 ```
 
-
 ### If you use Vue version 3
-
 
 ```javascript
 import { createApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/inertia-vue3";
 
 createInertiaApp({
-    resolve: (name) => {
-        let page = null;
+  resolve: (name) => {
+    let page = null;
 
-        let isModule = name.split("::");
-        if (isModule.length > 1) {
-            let module = isModule[0];
-            let pathTo = isModule[1];
-            // @modules is an alias of the module folder or just specify the path 
-            // from the root directory to the folder modules             
-            // for example ../../modules
-            page = require(`@modules/${moduleName}/${pathToFile}.vue`);
-        } else {
-            page = require(`./Pages/${name}`);
-        }
-        //...
-        return page.default;
-    },
-    setup({ el, App, props, plugin }) {
-        createApp({ render: () => h(App, props) })
-            .use(plugin)
-            .mount(el);
-    },
+    let isModule = name.split("::");
+    if (isModule.length > 1) {
+      let module = isModule[0];
+      let pathTo = isModule[1];
+      // @modules is an alias of the module folder or just specify the path
+      // from the root directory to the folder modules
+      // for example ../../modules
+      page = require(`@modules/${moduleName}/${pathToFile}.vue`);
+    } else {
+      page = require(`./Pages/${name}`);
+    }
+    //...
+    return page.default;
+  },
+  setup({ el, App, props, plugin }) {
+    createApp({ render: () => h(App, props) })
+      .use(plugin)
+      .mount(el);
+  },
 });
-
 ```
 
 ## Aliases
 
-**For the convenience of specifying the path from the root directory to the module directory, you can add alias in webpack.mix.js**
-
-```javascript
-const path = require('path')
-
-mix.webpackConfig((webpack) => {
-  return {
-    resolve: {
-       alias: {
-         "@modules": path.resolve(__dirname + "/modules"),
-       },
-    },
-  };
-});
-
-```
-
 **For the convenience of specifying the path from the root directory to the module directory, you can add alias in vite.config.js**
 
 ```javascript
-const path = require('path')
+const path = require("path");
 
 export default defineConfig({
-  resolve:{
-    alias:{
-      '@modules' : path.resolve(__dirname + '/modules')
+  resolve: {
+    alias: {
+      "@modules": path.resolve(__dirname + "/modules"),
     },
-  }
-})
-
+  },
+});
 ```
 
 ## Console command
@@ -203,7 +181,6 @@ export default defineConfig({
 **You can run `php artisan module:publish-stubs` to publish stubs.**
 
 **And override the generation of default files**
-
 
 ## After create module
 
@@ -217,11 +194,11 @@ npm run dev
 
 You'll find installation instructions and full documentation on [https://docs.laravelmodules.com/](https://docs.laravelmodules.com/).
 
-
 ## Authors
+
 - [Nicolas Widart](https://github.com/nWidart/)
 - [Yaroslav Fedan](https://github.com/YaroslavFedan/)
-- Add your clickable username here. It should point to your GitHub account. 
+- Add your clickable username here. It should point to your GitHub account.
 
 ## License
 

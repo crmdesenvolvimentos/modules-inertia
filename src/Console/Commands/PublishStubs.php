@@ -1,6 +1,6 @@
 <?php
 
-namespace Dongrim\ModulesInertia\Console\Commands;
+namespace Crmdesenvolvimentos\ModulesInertia\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
@@ -20,7 +20,7 @@ class PublishStubs extends Command
     {
         $pathToStubs = __DIR__ . '/../../../stubs';
 
-        File::copyDirectory($pathToStubs, base_path('stubs/dongrim'));
+        File::copyDirectory($pathToStubs, base_path('stubs/crmdesenvolvimentos'));
 
         $this->info('Stubs is successfully published.');
     }

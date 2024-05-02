@@ -1,10 +1,10 @@
 <?php
 
-namespace Dongrim\ModulesInertia;
+namespace Crmdesenvolvimentos\ModulesInertia;
 
 use Inertia\Inertia;
 use Illuminate\Support\ServiceProvider;
-use Dongrim\ModulesInertia\Console\Commands\PublishStubs;
+use Crmdesenvolvimentos\ModulesInertia\Console\Commands\PublishStubs;
 
 class ModulesInertiaServiceProvider extends ServiceProvider
 {
