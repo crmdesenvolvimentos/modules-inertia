@@ -60,7 +60,7 @@ class ModulesInertiaSource
 
     private function getModuleName(string $moduleName): string
     {
-        $moduleName = Str::title($moduleName);
+        $moduleName = Str::ucfirst($moduleName);
 
         if (!Module::has($moduleName)) {
             throw ModuleNotExist::make($moduleName);
