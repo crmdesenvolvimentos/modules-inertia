@@ -60,13 +60,17 @@ class ModulesInertiaSource
 
     private function getModuleName(string $moduleName): string
     {
-        $moduleName = Str::ucfirst($moduleName);
+        $module_name = Str::title($moduleName);
 
-        if (!Module::has($moduleName)) {
+        if (!Module::has($module_name)) {
+            $module_name_other = Str::ucfirst($moduleName);
+            if (Module::has($module_name_other)){
+                return $module_name_other;
+            }
             throw ModuleNotExist::make($moduleName);
         }
 
-        return $moduleName;
+        return $module_name;
     }
 
     private function explodeSource(string $source): array
