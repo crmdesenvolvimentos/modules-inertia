@@ -60,6 +60,8 @@ class ModulesInertiaSource
 
     private function getModuleName(string $moduleName): string
     {
+        if (Module::has($moduleName)) return $moduleName;
+
         $module_name = Str::title($moduleName);
 
         if (!Module::has($module_name)) {
