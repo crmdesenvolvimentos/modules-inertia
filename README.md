@@ -6,9 +6,9 @@ The package is designed to be used by Vue/InertiaJs in conjunction with [Laravel
 
 ## Laravel compatibility
 
-| Laravel  | modules-inertia |
-| :------- | :-------------- |
-| 8.0-11.x | 0.6.x - 1.0.x   |
+| Laravel   | modules-inertia |
+| :-------- | :-------------- |
+| 10.0-12.x | 1.0.x - 2.0.x   |
 
 ## Installation
 
