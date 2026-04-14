@@ -7,22 +7,18 @@ use Illuminate\Support\ServiceProvider;
 class $CLASS$ extends ServiceProvider
 {
     /**
-     * Register the service provider.
-     *
-     * @return void
+     * Register services.
      */
-    public function register()
+    public function register(): void
     {
         //
     }
 
     /**
-     * Get the services provided by the provider.
-     *
-     * @return array
+     * Bootstrap services.
      */
-    public function provides()
+    public function boot(): void
     {
-        return [];
+        //
     }
 }
