@@ -8,7 +8,7 @@ The package is designed to be used by Vue/InertiaJs in conjunction with [Laravel
 
 | Laravel   | modules-inertia |
 | :-------- | :-------------- |
-| 10.0-12.x | 1.0.x - 2.0.x   |
+| 10.0-13.x | 2.0.x - 3.0.x - |
 
 ## Installation
 
