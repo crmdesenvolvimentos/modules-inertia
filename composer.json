@@ -11,6 +11,7 @@
         "php"
     ],
     "license": "MIT",
+    "type": "library",
     "authors": [
         {
             "name": "Celio Martins",
@@ -34,6 +35,9 @@
         }
     },
     "extra" :{
+        "branch-alias": {
+            "dev-master": "13.x-dev"
+        },
         "laravel": {
             "providers": [
                 "Crmdesenvolvimentos\\ModulesInertia\\ModulesInertiaServiceProvider"

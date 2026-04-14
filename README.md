@@ -6,17 +6,27 @@ The package is designed to be used by Vue/InertiaJs in conjunction with [Laravel
 
 ## Laravel compatibility
 
-| Laravel   | modules-inertia |
-| :-------- | :-------------- |
-| 10.0-13.x | 2.0.x - 3.0.x - |
+| Laravel | modules-inertia | inertiajs/inertia-laravel |
+| :------ | :-------------- | :------------------------ |
+| 10.x-13.x | 13.x | 2.x or 3.x |
 
 ## Installation
 
 **Install the package via composer.**
 
 ```bash
-composer require crmdesenvolvimentos/modules-inertia
+composer require crmdesenvolvimentos/modules-inertia:^13.0
 ```
+
+## Upgrade from previous lock versions
+
+If the target project is locked to an older version of this package or `inertiajs/inertia-laravel`, update both packages in the same Composer command:
+
+```bash
+composer update crmdesenvolvimentos/modules-inertia inertiajs/inertia-laravel
+```
+
+This avoids the common partial update error where the lock file keeps `crmdesenvolvimentos/modules-inertia` on `12.0` and `inertiajs/inertia-laravel` on `v2.x`.
 
 ## Config Files
 
